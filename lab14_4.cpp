@@ -17,3 +17,21 @@ int main(){
 	
 	return 0;
 }
+
+void shuffle(int &a,int &b,int &c,int &d){
+  int generate;
+  int oldvalue[4] = {a,b,c,d};
+  int newvalue[4] = {0,0,0,0};
+  for(int i=0;i<4;i++){
+    while(newvalue[i] == 0){
+      generate = rand()%4;
+      newvalue[i] = oldvalue[generate];
+    }
+    oldvalue[generate] = 0;
+  }
+  a = newvalue[0];
+  b = newvalue[1];
+  c = newvalue[2];
+  d = newvalue[3];
+  return;
+}
